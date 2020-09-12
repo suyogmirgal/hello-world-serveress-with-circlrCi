@@ -23,7 +23,7 @@ references:
 
 jobs:
   run-tests:
-    working_directory: ~/repo
+      working_directory: ~/repo
       executor: python
       steps:
         - checkout
