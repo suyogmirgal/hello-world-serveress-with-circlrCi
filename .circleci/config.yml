@@ -33,7 +33,7 @@ jobs:
         - *pip_install
         - *pycache_save
         - run:
-            command: python -m pytest
+            command: pipenv run pytest
 
 workflows:
   main:
