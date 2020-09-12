@@ -7,4 +7,4 @@ def test_hello_world():
     result = hello(event={}, context="Context")
 
     assert result['statusCode'] == 200
-    assert json.loads(result['body'])['message'] == 'Hello World !!!'
+    assert json.loads(result['body'])['message'] == 'Hello World !!!!!!!!!'
