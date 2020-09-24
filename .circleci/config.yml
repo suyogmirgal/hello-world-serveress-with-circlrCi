@@ -11,7 +11,7 @@ references:
     run:
       command: |
         sudo pip install pipenv
-        pipenv install
+        pipenv install --dev --ignore-pipfile
 
 jobs:
   test:
