@@ -14,20 +14,16 @@ references:
         pipenv install
 
 jobs:
-  run-tests:
+  test:
       working_directory: ~/repo
       executor: python
       steps:
         - checkout
         - *pip_install
         - run:
-            command: echo "[Start] Run Tests"
-        - run:
             command: pipenv run pytest
-        - run:
-            command: echo "[End] Run Tests"
 
 workflows:
   main:
     jobs:
-      - run-tests
+      - test
