@@ -12,16 +12,6 @@ references:
       command: |
         sudo pip install pipenv
         pipenv install
-  pycache_restore: &pycache_restore
-    restore_cache:
-      key: deps-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-  pycache_save: &pycache_save
-    save_cache:
-      key: deps-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-      paths:
-        - ".venv"
-        - "/usr/local/bin"
-        - "/usr/local/lib/python3.7/site-packages"
 
 jobs:
   run-tests:
@@ -29,11 +19,13 @@ jobs:
       executor: python
       steps:
         - checkout
-        - *pycache_restore
         - *pip_install
-        - *pycache_save
+        - run:
+            command: echo "[Start] Run Tests"
         - run:
             command: pipenv run pytest
+        - run:
+            command: echo "[End] Run Tests"
 
 workflows:
   main:
