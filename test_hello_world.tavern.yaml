@@ -1,0 +1,11 @@
+test_name: Hello Get APIs
+
+stages:
+  - name: Hello Get API returns response without any error
+    request:
+      url: http://localhost:3000/dev/hello-world
+      method: GET
+    response:
+      status_code: 200
+      json:
+        message : 'Hello World !!!!!!!!!'

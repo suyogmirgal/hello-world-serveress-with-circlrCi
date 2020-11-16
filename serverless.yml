@@ -6,7 +6,23 @@ provider:
   name: aws
   runtime: python3.8
 
+plugins:
+  - serverless-offline
+
 functions:
+  health:
+    handler: handlers.health_check_handler.health
+    events:
+      - http:
+          path: health
+          method: get
+          cors: true
+
   hello:
     handler: handlers.hello_handler.hello
+    events:
+      - http:
+          path: hello-world
+          method: get
+          cors: true
 
