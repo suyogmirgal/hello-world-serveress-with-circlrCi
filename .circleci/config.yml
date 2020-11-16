@@ -22,6 +22,7 @@ jobs:
         - *pip_install
         - run:
             command: |
+              npm i
               bash sls_offline_start.sh
               pipenv run pytest
 #              bash sls_offline_stop.sh
