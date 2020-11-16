@@ -9,6 +9,7 @@ verify_ssl = true
 pytest = "*"
 importlib-metadata = "*"
 pytest-bdd = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
