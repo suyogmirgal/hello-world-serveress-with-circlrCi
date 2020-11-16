@@ -6,7 +6,7 @@ fi
 
 echo 'start -> sls offline'
 
-sls offline 2>1 > $TMPFILE &
+serverless offline 2>1 > $TMPFILE &
 PID=$!
 echo $PID > .offline.pid
 
