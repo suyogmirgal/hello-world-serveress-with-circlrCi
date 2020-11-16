@@ -1,5 +1,5 @@
 echo 'stop -> serverless offline'
-sudo kill `cat .offline.pid`
-sudo rm .offline.pid
+kill `cat .offline.pid`
+rm .offline.pid
 echo 'serverless offline stopped'
 

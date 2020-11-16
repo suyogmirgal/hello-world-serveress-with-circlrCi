@@ -6,7 +6,7 @@ fi
 
 echo 'start -> sls offline'
 
-sudo serverless offline 2>1 > $TMPFILE &
+serverless offline 2>1 > $TMPFILE &
 PID=$!
 echo $PID > .offline.pid
 
@@ -18,4 +18,4 @@ sleep 1; done
 
 echo 'sls offline started, removing tmp log file'
 
-sudo rm $TMPFILE
+rm $TMPFILE

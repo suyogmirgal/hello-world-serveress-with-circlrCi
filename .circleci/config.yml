@@ -23,6 +23,7 @@ jobs:
         - run:
             command: |
               npm ci
+              npm install serverless
               bash sls_offline_start.sh
               pipenv run pytest
 #              bash sls_offline_stop.sh
