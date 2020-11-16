@@ -13,9 +13,9 @@ echo $PID > .offline.pid
 while ! grep "server ready" $TMPFILE
 do
 echo 'starting ...'
+echo `cat 1`
 sleep 1; done
 
 echo 'sls offline started, removing tmp log file'
 
 rm $TMPFILE
-rm 1
