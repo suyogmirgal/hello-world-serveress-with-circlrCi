@@ -4,7 +4,7 @@ if [ -f .offline.pid ]; then
     exit 1
 fi
 
-echo 'start -> sls offline'
+echo 'start -> serverless offline offline'
 
 serverless offline 2>1 > $TMPFILE &
 PID=$!
@@ -16,6 +16,7 @@ echo 'starting ...'
 echo `cat 1`
 sleep 1; done
 
-echo 'sls offline started, removing tmp log file'
+echo 'serverless offline started'
 
 rm $TMPFILE
+rm 1
