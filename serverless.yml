@@ -8,7 +8,6 @@ provider:
 
 plugins:
   - serverless-offline
-  - serverless-mocha-plugin
 
 functions:
   health:

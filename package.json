@@ -1,0 +1,10 @@
+{
+  "name": "hello-world-with-CircleCi",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {
+    "serverless": "1.47.0",
+    "serverless-python-requirements": "^4.3.0",
+    "serverless-offline": "^6.8.0"
+  }
+}
