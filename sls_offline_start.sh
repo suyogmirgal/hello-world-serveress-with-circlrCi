@@ -1,8 +1,4 @@
 TMPFILE=.offline$$.log
-if [ -f .offline.pid ]; then
-    echo "Found file .offline.pid. Not starting."
-    exit 1
-fi
 
 echo 'start -> serverless offline offline'
 
