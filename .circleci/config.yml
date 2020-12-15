@@ -11,31 +11,24 @@ references:
     run:
       command: |
         sudo pip install pipenv
-        pipenv install
-  pycache_restore: &pycache_restore
-    restore_cache:
-      key: deps-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-  pycache_save: &pycache_save
-    save_cache:
-      key: deps-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-      paths:
-        - ".venv"
-        - "/usr/local/bin"
-        - "/usr/local/lib/python3.7/site-packages"
+        pipenv install --dev --ignore-pipfile
 
 jobs:
-  run-tests:
+  test:
       working_directory: ~/repo
       executor: python
       steps:
         - checkout
-        - *pycache_restore
         - *pip_install
-        - *pycache_save
         - run:
-            command: pipenv run pytest
+            command: |
+              sudo npm i -g serverless
+              npm ci
+              bash sls_offline_start.sh
+              pipenv run pytest
+              bash sls_offline_stop.sh
 
 workflows:
   main:
     jobs:
-      - run-tests
+      - test

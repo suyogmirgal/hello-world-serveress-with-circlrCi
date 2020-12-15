@@ -1,0 +1,15 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "GdprDeleteUserRequest",
+  "required": ["email"],
+  "properties": {
+    "email": {
+      "type": "string",
+      "title": "email address of user",
+      "default": "",
+      "pattern": "(.+)[@](.+)"
+    }
+  }
+}
